@@ -8,7 +8,7 @@ public class Ex3 {
         double menor=0;
 
         for (int i=0; i<10; i++){
-            System.out.print("coloque o numero: ");
+            System.out.print("coloque um numero: ");
             numeros[i]=scanner.nextInt();
         }
         for (int i=0; i<10; i++){
