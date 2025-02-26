@@ -5,7 +5,7 @@ public class Ex8{
         float a = math.ads(x1-x2);
         float b = math.ads(y1-y2);
         float c = Math.sqrt((a*a)+(b*b));
-        if (c != 0){
+        if (c = 0){
             return true;
         }
         else{
@@ -29,6 +29,11 @@ public class Ex8{
         System.out.print("digite o y2: ");
         float y2 = entrada.nextFloat();
 
-        haColisaoEntreCirculos(r1,x1,y1,r2,x2,y2)
+        if(haColisaoEntreCirculos(r1,x1,y1,r2,x2,y2)){
+            System.out.println("Há colisão");
+        }
+        else{
+            System.out.println("Não há colisão");
+        }
     }
 }
