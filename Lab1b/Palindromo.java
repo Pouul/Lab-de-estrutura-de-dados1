@@ -7,7 +7,7 @@ class Palindromo{
      private String texto;
 
     Palindromo(){
-        this.texto="";
+        
     }
 
     public Palindromo(String frase){
@@ -19,10 +19,12 @@ class Palindromo{
     }
 
     public void setTexto(String frase){
-        if (frase==null){
-            throw new IllegalArgumentException("erro de entrada");
+        if (frase.isEmpty()){
+            System.out.println("erro de entrada");
         }
-        this.texto = frase;
+        else{
+            this.texto = frase;
+        }
     }
 
     public boolean verificar(){
@@ -43,14 +45,15 @@ class Palindromo{
     }
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in);
-        system.out.println("digite a palavra: ");
+        System.out.print("digite a palavra: ");
         String frase = entrada.nextLine();
-        Palindromo p = new Palindromo(frase);
+        Palindromo p = new Palindromo();
+        p.setTexto(frase);
         if (p.verificar()){
-            system.out.println("é palindromo");
+            System.out.println("é palindromo");
         }
         else{
-            system.out.println("não é palindromo");
+            System.out.println("não é palindromo");
         }
     }
 }
