@@ -2,15 +2,16 @@
 
 import java.util.Scanner;
 
-class Palindromo{
+class Pilha {
 
-    private String texto;
+    private int tamanho;
 
-    Palindromo(){
+
+    Pilha(){
         
     }
-    public Palindromo(String texto){
-        this.texto=setTexto(texto);
+    public Palindromo(String frase){
+        this.texto=setTexto(frase);
         
     }
 
@@ -18,34 +19,30 @@ class Palindromo{
         return texto;
     }
 
-    public String setTexto(String texto){
+    public void setTexto(String frase){
         if (texto == null){
             System.out.println("erro de entrada");
-            throw new Exception("Texto não pode ser nulo");
         }
         else{
-            this.texto = texto;
+            this.texto = frase;
         }
     }
 
     public boolean verificar(){
         int tamanho = texto.length();
-        if (tamanho<=1){ 
-            return true;
-        }
-
+        int Liguais = 0;
         int vezes = tamanho/2;
-
-        String aux = texto;
-        aux = aux.toLowerCase();
-        aux = aux.replaceAll(" ","");
-
         for (int i=0;i<vezes;i++){
-            if (texto.charAt(i) != texto.charAt(tamanho-i-1)){
-                return false;
+            if (texto.charAt(i) == texto.charAt(tamanho-i-1)){
+                Liguais++;
             }
         }
-        return true;
+        if(Liguais == vezes){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     public static void main(String[] args){
         Palindromo p = new Palindromo();
@@ -61,4 +58,3 @@ class Palindromo{
         }
     }
 }
-
